@@ -2,6 +2,8 @@ import './App.css';
 import Counter from './components/Counter'
 import LifeCycles from './components/LifeCycles'
 import BindEvents from './components/BindEvents'
+import RenderingConditional from './components/RenderingConditional'
+
 
 const incrementValue = 5;
 
@@ -15,7 +17,9 @@ function App() {
 
       <LifeCycles lifeCycles={["componentDidMount", "componentDidUpdate", "componentWillUnmount"]} />
       
-      <BindEvents/>
+      <BindEvents />
+      
+      <RenderingConditional/>
     </div>
   );
 }
