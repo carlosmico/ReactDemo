@@ -23,6 +23,10 @@ class Counter extends Component {
 
     render() {
         return <div>
+            <h3>Contador Kata 1 y 2</h3>
+
+            <hr />
+
             <div >{this.state.count}</div>
 
             <button onClick={() => this.increment()}>Incrementar</button>
