@@ -1,0 +1,38 @@
+import React, { Component } from 'react';
+
+const initialState = { count: 1, name: 'Nombre', surname: 'Apellidos' }
+
+class Counter extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = initialState;
+    }
+
+    increment() {
+        this.setState({ count: this.state.count + this.props.incValue });
+    }
+
+    showName() {
+        this.setState({ name: 'Carlos', surname: 'Micó' })
+    }
+
+    cleanState() {
+        this.setState(initialState)
+    }
+
+    render() {
+        return <div>
+            <div >{this.state.count}</div>
+
+            <button onClick={() => this.increment()}>Incrementar</button>
+            <button onClick={() => this.showName()}>Ver nombre</button>
+
+            <button onClick={this.cleanState.bind(this)}>Clean state</button>
+
+            <span >{this.state.name + ' - ' + this.state.surname}</span>
+        </div>
+
+    }
+}
+export default Counter;
