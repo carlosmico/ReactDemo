@@ -1,0 +1,24 @@
+@import "Colors.scss";
+
+@mixin styledButton {
+  font-size: 30px;
+  background-color: white;
+  border-color: $green-color;
+  color: $green-color;
+
+  &:first-child {
+    color: red;
+  }
+}
+
+.styled-components {
+  background-color: $purple-color;
+
+  h3 {
+    color: $green-color;
+  }
+
+  .styled-button {
+    @include styledButton();
+  }
+}

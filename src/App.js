@@ -4,6 +4,7 @@ import LifeCycles from './components/LifeCycles'
 import BindEvents from './components/BindEvents'
 import RenderingConditional from './components/RenderingConditional'
 import NameForm from './components/NameForm'
+import StyledComponents from './components/styledComponents/StyledComponents'
 
 
 const incrementValue = 5;
@@ -22,7 +23,9 @@ function App() {
       
       <RenderingConditional />
       
-      <NameForm/>
+      <NameForm />
+      
+      <StyledComponents/>
     </div>
   );
 }

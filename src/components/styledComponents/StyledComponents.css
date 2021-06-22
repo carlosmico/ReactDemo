@@ -1,0 +1,10 @@
+h3{
+    color: green;
+}
+
+.styled-button{
+    font-size: 30px;
+    color: red;
+    background-color: white;
+    border-color: red;
+}
