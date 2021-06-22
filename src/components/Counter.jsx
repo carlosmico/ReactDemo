@@ -1,42 +1,53 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-const initialState = { count: 1, name: 'Nombre', surname: 'Apellidos' }
+const initialState = { count: 1, name: "Nombre", surname: "Apellidos" };
 
 class Counter extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = initialState;
+    console.log("Counter props -> ", props);
+
+    const history = props.history;
+
+    if (history) {
+      history.block((location, action) => {
+        if (true) return "Quieres salir?";
+      });
     }
 
-    increment() {
-        this.setState({ count: this.state.count + this.props.incValue });
-    }
+    this.state = initialState;
+  }
 
-    showName() {
-        this.setState({ name: 'Carlos', surname: 'Micó' })
-    }
+  increment() {
+    this.setState({ count: this.state.count + this.props.incValue });
+  }
 
-    cleanState() {
-        this.setState(initialState)
-    }
+  showName() {
+    this.setState({ name: "Carlos", surname: "Micó" });
+  }
 
-    render() {
-        return <div>
-            <h3>Contador Kata 1 y 2</h3>
+  cleanState() {
+    this.setState(initialState);
+  }
 
-            <hr />
+  render() {
+    return (
+      <div>
+        <h3>Contador Kata 1 y 2</h3>
 
-            <div >{this.state.count}</div>
+        <hr />
 
-            <button onClick={() => this.increment()}>Incrementar</button>
-            <button onClick={() => this.showName()}>Ver nombre</button>
+        <div>{this.state.count}</div>
 
-            <button onClick={this.cleanState.bind(this)}>Clean state</button>
+        <button onClick={() => this.increment()}>Incrementar</button>
+        <button onClick={() => this.showName()}>Ver nombre</button>
 
-            <span >{this.state.name + ' - ' + this.state.surname}</span>
-        </div>
+        <button onClick={this.cleanState.bind(this)}>Clean state</button>
 
-    }
+        <span>{this.state.name + " - " + this.state.surname}</span>
+      </div>
+    );
+  }
 }
 export default Counter;

@@ -1,26 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Counter extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {};
-    }
+    console.log("Bind events props -> ", props);
 
-    click() {
-        console.log('Button clicked', this, this.state)
-    }
+    console.log(props.location.search.split("?")[1].split("&"));
 
+    this.state = {};
+  }
 
-    render() {
-        return <div>
-            <h3>Bind eventos</h3>
+  click() {
+    console.log("Button clicked", this, this.state);
+  }
 
-            <hr />
+  render() {
+    return (
+      <div>
+        <h3>Bind eventos</h3>
 
-            <button onClick={this.click.bind(this)}>Click</button>
-        </div>
+        <hr />
 
-    }
+        <button onClick={this.click.bind(this)}>Click</button>
+      </div>
+    );
+  }
 }
 export default Counter;
