@@ -3,6 +3,7 @@ import Counter from './components/Counter'
 import LifeCycles from './components/LifeCycles'
 import BindEvents from './components/BindEvents'
 import RenderingConditional from './components/RenderingConditional'
+import NameForm from './components/NameForm'
 
 
 const incrementValue = 5;
@@ -19,7 +20,9 @@ function App() {
       
       <BindEvents />
       
-      <RenderingConditional/>
+      <RenderingConditional />
+      
+      <NameForm/>
     </div>
   );
 }
