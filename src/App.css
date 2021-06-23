@@ -13,12 +13,18 @@
 
 header{
   display: flex;
-  justify-content: space-between;   
+  justify-content: space-evenly;  
+  flex-wrap: wrap; 
   margin-bottom: 30px;
 }
 
 header a{
   margin: 10px;
+  font-size: 1em;
+}
+
+.header-container{
+  margin-bottom: 60px;
 }
 
 .is-active{

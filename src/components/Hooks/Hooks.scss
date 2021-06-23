@@ -1,0 +1,21 @@
+.hooks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    font-size: 2em;
+  }
+
+  .buttoner {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    button {
+      margin: 10px;
+      height: 30px;
+      width: 50px;
+    }
+  }
+}

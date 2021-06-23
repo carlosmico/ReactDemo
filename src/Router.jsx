@@ -8,6 +8,7 @@ import NameForm from "./components/NameForm";
 import Refs from "./components/Refs";
 import StyledComponents from "./components/styledComponents/StyledComponents.jsx";
 import Header from "./components/Header";
+import Hooks from "./components/Hooks/Hooks";
 
 const Router = () => (
   <BrowserRouter>
@@ -27,7 +28,10 @@ const Router = () => (
       <Route path="/nameform" component={NameForm} exact />
 
       <Route path="/styledcomponents" component={StyledComponents} exact />
+
       <Route path="/refs" component={Refs} exact />
+
+      <Route path="/hooks" component={Hooks} exact />
 
       <Route path="/" exact>
         <Redirect to="/nameform" />
