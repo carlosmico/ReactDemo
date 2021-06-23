@@ -2,8 +2,6 @@ import "./App.css";
 
 import Router from "./Router";
 
-const incrementValue = 5;
-
 function App() {
   return (
     <div className="App">

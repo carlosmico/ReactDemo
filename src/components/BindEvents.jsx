@@ -6,8 +6,6 @@ class Counter extends Component {
 
     console.log("Bind events props -> ", props);
 
-    console.log(props.location.search.split("?")[1].split("&"));
-
     this.state = {};
   }
 

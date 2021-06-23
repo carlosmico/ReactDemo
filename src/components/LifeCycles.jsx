@@ -1,49 +1,55 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class LifeCycle extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            clicks: 0,
-        };
-    }
+    this.state = {
+      clicks: 0,
+      lifeCycles: [
+        "componentDidMount",
+        "componentDidUpdate",
+        "componentWillUnmount",
+      ],
+    };
+  }
 
-    componentDidMount() {
-        console.log('componentDidsMount');
-    }
+  componentDidMount() {
+    console.log("componentDidMount");
+  }
 
-    componentDidUpdate(prevProps, prevState) {
-        console.log('componentDidUpdate', prevProps, prevState);
-    }
+  componentDidUpdate(prevProps, prevState) {
+    console.log("componentDidUpdate", prevProps, prevState);
+  }
 
-    componentWillUnmount() {
-        console.log('componentWillUnmount');
-    }
+  componentWillUnmount() {
+    console.log("componentWillUnmount");
+  }
 
-    click() {
-        this.setState({ clicks: this.state.clicks + 1 })
-    }
+  click() {
+    this.setState({ clicks: this.state.clicks + 1 });
+  }
 
-    render() {
-        return <div>
-            <hr />
+  render() {
+    return (
+      <div>
+        <hr />
 
-            <h3>Ciclos de vida</h3>
+        <h3>Ciclos de vida</h3>
 
-            <hr />
+        <hr />
 
-            <ul>
-                {
-                    this.props.lifeCycles.map(lifeCycle => <li key={lifeCycle}>{lifeCycle}</li>)
-                }
-            </ul>
+        <ul>
+          {this.state.lifeCycles.map((lifeCycle) => (
+            <li key={lifeCycle}>{lifeCycle}</li>
+          ))}
+        </ul>
 
-            <p>Clicks: {this.state.clicks}</p>
+        <p>Clicks: {this.state.clicks}</p>
 
-            <button onClick={() => this.click()}>Launch update</button>
-        </div>
-
-    }
+        <button onClick={() => this.click()}>Launch update</button>
+      </div>
+    );
+  }
 }
 export default LifeCycle;
